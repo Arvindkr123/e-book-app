@@ -9,4 +9,5 @@ const globalErrorHandler = (err: HttpError, req: Request, res: Response) => {
     errorStack: NODE_ENV === "development" ? err.stack : "",
   });
 };
+
 export default globalErrorHandler;

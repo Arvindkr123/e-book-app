@@ -1,14 +1,10 @@
-import express, { Request, Response } from "express";
-import createHttpError from "http-errors";
+import express from "express";
 import globalErrorHandler from "./middleware/globalErrorHandler";
+import userRoutes from "./routes/user.routes";
 
 const app = express();
 
-app.get("/", (req: Request, res: Response) => {
-  const error = createHttpError(400, "Something went wrong");
-  throw error;
-  res.send("hello world");
-});
+app.use("/api/users", userRoutes);
 
 app.use(globalErrorHandler);
 
