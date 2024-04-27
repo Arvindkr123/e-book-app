@@ -20,5 +20,7 @@ export const createUserController = async (
     return next(error);
   }
 
+  // if not user exists in our database then we need to create user
+
   res.json({ msg: "user created" });
 };
